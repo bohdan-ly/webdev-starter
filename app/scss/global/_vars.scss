@@ -1,0 +1,20 @@
+// ************************** Breakpoints ********************************
+
+$minwidth: 320px;
+$mw: 1170; //put here max width of content
+$md1: $mw+12;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+
+// ************************** Fonts ********************************
+$fontfamily: monospace, monospace;
+
+
+:root {
+    --primary-color: #fff;
+    --background: #212121;
+    --secondary: #2e2330;
+    --block: #191919;
+    --burger: #f4f4f4;
+}

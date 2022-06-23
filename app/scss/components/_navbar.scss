@@ -1,0 +1,112 @@
+// nm
+
+nav {
+    background-color: var(--block);
+    overflow: hidden;
+
+    .navbar {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+        .menu {
+            display: block;
+        }
+
+        .logo {
+            z-index: 1;
+        }
+
+        .menu__list {
+            display: flex;
+            z-index: 1;
+
+            &-item {
+                margin-right: 25px;
+                position: relative;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    .fixed-nav {
+        background: var(--secondary);
+        position: sticky;
+        top: 0;
+        z-index: 11;
+    }
+
+
+
+    @media (max-width: $md3+px) {
+        .burger {
+            z-index: 102;
+            cursor: pointer;
+
+            &.active-burger {
+                &:before {
+                    background: var(--block);
+                    transform: rotate(45deg);
+                    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) .3s all;
+                }
+
+                &:after {
+                    background: var(--block);
+                    transform: rotate(-45deg);
+                    transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) .3s all;
+                }
+
+                & span {
+                    transform: scale(0)
+                }
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: var(--burger);
+                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) .3s all;
+            }
+
+            &:before {
+                top: 0;
+            }
+
+            &:after {
+                bottom: 0;
+            }
+
+            span {
+                position: absolute;
+                top: 9px;
+                right: 0;
+                width: 100%;
+                background: var(--burger);
+                height: 2px;
+                transform: scale(1);
+                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) .3s all;
+            }
+        }
+
+        .menu__list {
+            position: absolute;
+            top: -100%;
+
+            &-item {
+                margin-right: 0 !important;
+
+                a {
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}
